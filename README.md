@@ -83,6 +83,68 @@ The notebook includes a helper:
 - Normalizes to `[0,1]`
 - Predicts with the trained model
 - Returns predicted class name and probability
+# CVPR — Coursework Notebooks
+
+This repository contains course assignments organized by directory (e.g., **MID**, **FINAL**).
+
+---
+
+## MID / Assignment 1 — NumPy Neural Network (5‑Class Classification)
+
+In this assignment, I implemented a **fully connected neural network from scratch using NumPy** to perform **5-class classification** on a **synthetic 2D dataset**.
+
+### Model Architecture
+- **Input**: 2D features (synthetic dataset)
+- **Preprocessing**:
+  - **Z-score normalization** of features
+  - **One-hot encoding** of class labels
+- **Network**:
+  - **3 hidden layers** with **ReLU** activation
+  - **Softmax** output layer (5 classes)
+- **Loss**: **Categorical Cross-Entropy**
+- **Training**: Gradient descent with backpropagation for **5000 epochs**
+
+### Results
+The model showed strong convergence and achieved:
+- **Training accuracy**: 100%
+- **Test accuracy**: 100%
+
+Performance was verified using:
+- overall accuracy metrics
+- per-class precision/recall/F1 scores
+- **confusion matrix**
+- **decision boundary plot** (showing clear separation among the five classes)
+
+### Learning Rate Experiments
+I experimented with multiple learning rates to observe training behavior:
+- too small → learning is slow
+- too large → training becomes unstable
+- **0.01 performed best** (fast and stable convergence)
+
+### Challenges & Solutions
+Key implementation challenges included:
+- Correct **backpropagation across multiple layers**
+- **Numerical stability** in softmax and cross-entropy computations
+- Careful handling of **array shapes** throughout forward/backward passes
+
+These were addressed using:
+- careful gradient derivations and validation
+- stability tricks in softmax/loss computation
+- clipping / safe computations to avoid overflow/underflow
+- consistent shape management for matrix operations
+
+### Future Improvements
+Possible extensions to improve performance and robustness:
+- better optimizers (Momentum, Adam, RMSProp)
+- regularization (L2, dropout)
+- **learning rate decay**
+- increasing network depth/width
+- testing on more complex and realistic datasets
+
+---
+
+## Author
+Created by the repository author.
 
 Example usage is included near the end of the notebook.
 
