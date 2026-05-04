@@ -1,4 +1,4 @@
-# Image Detection / Classification Directory: Final
+# Image Detection / Classification (Directory: FINAL)
 
 This folder contains the training notebook for an image classification task using a **self‑collected dataset**. The notebook performs **data augmentation**, builds an **AlexNet‑like CNN** in TensorFlow/Keras, trains the model, and saves the trained weights for inference.The accuricy is 99%
 
