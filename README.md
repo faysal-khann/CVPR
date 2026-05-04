@@ -1,3 +1,9 @@
+# CVPR — Coursework Notebooks
+
+This repository contains course assignments organized by directory (e.g., **MID**, **FINAL**).
+
+---
+
 # Image Detection / Classification (Directory: FINAL)
 
 This folder contains the training notebook for an image classification task using a **self‑collected dataset**. The notebook performs **data augmentation**, builds an **AlexNet‑like CNN** in TensorFlow/Keras, trains the model, and saves the trained weights for inference.The accuricy is 99%
@@ -83,11 +89,7 @@ The notebook includes a helper:
 - Normalizes to `[0,1]`
 - Predicts with the trained model
 - Returns predicted class name and probability
-# CVPR — Coursework Notebooks
 
-This repository contains course assignments organized by directory (e.g., **MID**, **FINAL**).
-
----
 
 ## MID / Assignment 1 — NumPy Neural Network (5‑Class Classification)
 
