@@ -146,16 +146,9 @@ k-NN with **Manhattan distance (L1)** achieved **moderate performance** on this 
 - dimensionality reduction (e.g., PCA) before k-NN
 - improved normalization and preprocessing
 
-## How to Run (General)
-1. Ensure you have Python installed.
-2. Install common dependencies (example):
-   ```bash
-   pip install numpy matplotlib scikit-learn opencv-python
-   ```
-3. Run the notebook/script for preprocessing, cross-validation, and final testing.
 
-## Key Takeaway
-**Distance metric choice matters.** In this experiment, **L1 + k=9** performed best under grayscale pixel-based features.
+
+
 
 ## MID / Assignment 2 — NumPy Neural Network (5‑Class Classification)
 
