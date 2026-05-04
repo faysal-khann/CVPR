@@ -89,9 +89,75 @@ The notebook includes a helper:
 - Normalizes to `[0,1]`
 - Predicts with the trained model
 - Returns predicted class name and probability
+# Mid Assignment 1 — k-NN on 32×32 Grayscale Animal Images
 
+This assignment implements a **k-Nearest Neighbors (k-NN)** classifier for **multi-class animal image classification** using a simple **raw pixel** representation. The goal is to compare **Euclidean (L2)** vs **Manhattan (L1)** distances and select the best configuration using **5-fold cross-validation**.
 
-## MID / Assignment 1 — NumPy Neural Network (5‑Class Classification)
+## Task Summary
+- Input images are **animal images**
+- Each image is:
+  - converted to **grayscale**
+  - resized to **32×32**
+  - flattened into a **1D feature vector** (32×32 = 1024 features)
+- A **k-NN classifier** is trained and evaluated using:
+  - multiple values of **k**
+  - two distance metrics: **L1** and **L2**
+  - **5-fold cross-validation** for model selection
+
+## Method
+### 1) Preprocessing
+- Convert RGB images to **grayscale**
+- Resize to **32×32**
+- Flatten pixel grid into a vector
+
+This produces a basic pixel-based feature space (no feature extraction).
+
+### 2) Model Selection (5-Fold Cross-Validation)
+We evaluated different values of **k** using:
+- **Euclidean distance (L2)**
+- **Manhattan distance (L1)**
+
+## Results
+### Cross-Validation
+Best configuration:
+- **Distance metric:** Manhattan (L1)
+- **k:** 9
+- **Mean CV accuracy:** **0.4500**
+
+Interpretation: For this grayscale pixel representation, **L1 distance** (sum of absolute differences) measures similarity more effectively than L2 (squared differences).
+
+### Final Evaluation (Train/Test Split)
+Using the best setting (**L1, k=9**):
+- Train on **80%** of the data
+- Test on **20%** of the data
+- **Test accuracy:** **0.4667**
+
+### Confusion Matrix Notes
+The confusion matrix indicates:
+- many correct classifications occur
+- there is still **noticeable confusion between certain animal classes**
+- this likely happens due to:
+  - visual similarity between animals at low resolution
+  - limitations of using **raw pixel values** (sensitive to pose/lighting/shift)
+
+## Conclusion
+k-NN with **Manhattan distance (L1)** achieved **moderate performance** on this dataset. Performance could likely be improved by using a stronger feature representation, such as:
+- feature extraction (HOG / CNN embeddings)
+- dimensionality reduction (e.g., PCA) before k-NN
+- improved normalization and preprocessing
+
+## How to Run (General)
+1. Ensure you have Python installed.
+2. Install common dependencies (example):
+   ```bash
+   pip install numpy matplotlib scikit-learn opencv-python
+   ```
+3. Run the notebook/script for preprocessing, cross-validation, and final testing.
+
+## Key Takeaway
+**Distance metric choice matters.** In this experiment, **L1 + k=9** performed best under grayscale pixel-based features.
+
+## MID / Assignment 2 — NumPy Neural Network (5‑Class Classification)
 
 In this assignment, I implemented a **fully connected neural network from scratch using NumPy** to perform **5-class classification** on a **synthetic 2D dataset**.
 
@@ -143,14 +209,6 @@ Possible extensions to improve performance and robustness:
 - increasing network depth/width
 - testing on more complex and realistic datasets
 
----
-
-## Author
-Created by the repository author.
-
-Example usage is included near the end of the notebook.
 
 
 
-## Author
-Self-collected dataset and training notebook prepared by the repository author.
